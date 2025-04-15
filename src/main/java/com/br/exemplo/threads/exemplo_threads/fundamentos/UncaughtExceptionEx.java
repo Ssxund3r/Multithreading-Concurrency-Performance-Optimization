@@ -6,19 +6,19 @@ public class UncaughtExceptionEx {
 
 			@Override
 			public void run() {
-				//Code that will run in a new thread
-				throw new RuntimeException("Intentional Exception... ");
+				// Código que será executado em uma nova thread
+				throw new RuntimeException("Exceção intencional...");
 			}
 		});
 		
-		thread.setName("Misbehaving thread... ");
-		
+		thread.setName("Thread com comportamento inesperado");
+
+		// Definindo o tratador de exceções não capturadas para a thread
 		thread.setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
 			
 			@Override
 			public void uncaughtException(Thread t, Throwable e) {
-				System.out.println("A critical error happened in thread " + t.getName() + " the error is " + e.getMessage());
-				
+				System.out.println("Um erro crítico ocorreu na thread " + t.getName() + ". O erro foi: " + e.getMessage());
 			}
 		});
 		

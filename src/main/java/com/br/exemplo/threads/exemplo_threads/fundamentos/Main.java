@@ -6,18 +6,17 @@ public class Main {
 
 			@Override
 			public void run() {
-				// Code that will run in a new thread
-				System.out.println("We are now in thread " + Thread.currentThread().getName());
-				System.out.println("Current thread priority is " + Thread.currentThread().getPriority());
+				// Código que será executado em uma nova thread
+				System.out.println("Agora estamos na thread: " + Thread.currentThread().getName());
+				System.out.println("A prioridade da thread atual é: " + Thread.currentThread().getPriority());
 			}
 		});
 		
-		thread.setName("New Worker Thread... ");
-		
+		thread.setName("Nova Thread de Trabalho");
 		thread.setPriority(Thread.MAX_PRIORITY);
 		
-		System.out.println("We are in thread: " + Thread.currentThread().getName() + " before starting a new thread... ");
+		System.out.println("Estamos na thread: " + Thread.currentThread().getName() + " antes de iniciar a nova thread...");
 		thread.start();
-		System.out.println("We are in thread: " + Thread.currentThread().getName() + " after starting a new thread... ");
+		System.out.println("Estamos na thread: " + Thread.currentThread().getName() + " após iniciar a nova thread...");
 	}
 }
